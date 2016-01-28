@@ -1,0 +1,231 @@
+---
+layout: post
+title:  "Lombok introduction"
+date:   2016-01-28 00:25:00 +0800
+categories: javaee
+tags: [javase, lombok, library]
+---
+
+有幾個Library自從用過之後 , 就幾乎回不去了 , Lombok就是其中一個 , 下面是範例
+
+標準的Java Pojo
+
+~~~ java
+
+public class User implements Serializable {
+
+    private Integer sid;
+    private Integer status = 0;
+    private String id = "";
+    private String name = "";
+    private String uuid = "";
+
+    public User() {
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User User = (User) o;
+        return Objects.equals(sid, User.sid);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sid);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("sid=").append(sid);
+        sb.append(", id='").append(id).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+}
+
+~~~
+
+上面只有5個attribute , 如果attribute再增加的話 , 行數就會再多更多.另外實務上 , POJO很多會對應成Entity Class , 所以會再
+加上Entity相關宣告(也許再來個Validator宣告).
+
+~~~ java
+
+@Entity
+@Table(name = "user")
+@XmlRootElement
+public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "UserSID")
+    private Integer sid;
+    @Column(name = "Status")
+    private Integer status = 0;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "UserID")
+    private String id = "";
+    @Size(max = 45)
+    @Column(name = "UserName")
+    private String name = "";
+    @Size(max = 36)
+    @Column(name = "UUID")
+    private String uuid = "";
+
+    public User() {
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User User = (User) o;
+        return Objects.equals(sid, User.sid);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sid);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("sid=").append(sid);
+        sb.append(", id='").append(id).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+}
+
+~~~
+
+套用lombok 之後.
+
+~~~ java
+
+@Data
+@Entity
+@Table(name = "user")
+@EqualsAndHashCode(of = "sid")
+@ToString(of = {"sid","id","name"})
+@XmlRootElement
+public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "UserSID")
+    private Integer sid;
+    @Column(name = "Status")
+    private Integer status = 0;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "UserID")
+    private String id = "";
+    @Size(max = 45)
+    @Column(name = "UserName")
+    private String name = "";
+    @Size(max = 36)
+    @Column(name = "UUID")
+    private String uuid = "";
+
+    public User() {
+    }
+
+}
+
+~~~
+
+因為不用寫為了POJO Style而需要刻意寫出全部的Getter and Setter , 可以更專注在真的需要寫邏輯的method.
+更多的資訊就請參考[官網](https://projectlombok.org/)
