@@ -11,7 +11,9 @@ tags: [github, github-pages, jekyll]
 ----
 
 Test Java with markdown block
-```
+
+~~~ java
+
 @Data
 @Entity
 @Table(name = "user")
@@ -50,7 +52,7 @@ public class User implements Serializable {
 
 }
 
-```
+~~~
 
 Test Java with jekyll highlight
 {% highlight java %}
