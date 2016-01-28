@@ -4,7 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Test add test at About
+Hi , I'm a Java Developer , Interest at application develop and business integration.
+System integration with Java has 3 years experience.
+Love to learn thing about software develop.
+
+Books: Clean Code , The Clean coder , Java Design Pattern.
+
+----
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
