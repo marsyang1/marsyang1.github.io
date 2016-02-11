@@ -6,9 +6,9 @@ categories: javaee
 tags: [javaee, spring]
 ---
 
-So , 先前工作的關係 , JavaEE跟Spring兩邊都有接觸到 , 所以偶爾會比對一下兩邊的狀況.
+So , 先前工作的關係 , JavaEE跟Spring兩邊都有接觸到 , 所以會比對一下兩邊的狀況.
 
-2016的狀況
+2015的狀況
 
 * JavaEE
     * 非常仰賴Ap Server.
@@ -16,4 +16,8 @@ So , 先前工作的關係 , JavaEE跟Spring兩邊都有接觸到 , 所以偶爾
     * 台灣用的人依舊不是很多 , 如果要用docker包成micro service也的確有點大.(也許可以用payara micro包看看)
      [Docker build payara micro](http://blog.payara.fish/docker-build-scripts-images-now-available-for-payara-server)
 * Spring
-    * 
+    * Spring Boot 的出現解決了Spring 多而繁雜的各種設定 , 也解決了各種版本相依卻不一致的問題.
+	
+----
+
+其實就兩邊都用到IOC , Web MVC , ORM Framework的狀況下 , 打包成War(or Jar file)的Size都不是很小.
