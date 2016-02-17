@@ -56,6 +56,6 @@ List<Tree> treeList = ADAPTER.preOrderTraversal(root).toList();
 
 ----
 參考資料
-[小殘的程式光廊](http://emn178.pixnet.net/blog/post/95499086-tree-traversal(%E6%A8%B9%E7%9A%84%E8%B5%B0%E8%A8%AA)
+[小殘的程式光廊](http://emn178.pixnet.net/blog/post/95499086)
 [Wikipedia](https://en.wikipedia.org/wiki/Tree_traversal)
 [RosettaCode-Tree_traversal](https://rosettacode.org/wiki/Tree_traversal)
