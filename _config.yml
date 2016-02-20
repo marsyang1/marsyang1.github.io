@@ -18,4 +18,4 @@ twitter_username: Marsyang1Mars
 github_username:  marsyang1
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
