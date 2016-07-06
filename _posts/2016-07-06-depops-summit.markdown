@@ -2,14 +2,39 @@
 layout: post
 title:  "Devops Summit 2016心得"
 date:   2016-07-06 23:22:00 +0800
-categories: service
-tags: [service]
+categories: summit
+tags: [summit]
 ---
 
+心得:
+有時候看著台人的人開心的演講 ， 真的是滿羨慕的 。 畢竟台中有這樣的環境跟能接受這樣文化的機會實在很少。
+要推動一些內部優化的工作也是困難重重....
 
-以下為筆記
+Kubernetes講者非常熟練的在台上非常炫Demo了一輪 ， 雖然Kubernetes本身不太好安裝 ， 但顯然
+所提供的各種功能的確是滿貼近Production會遇到的各種狀況 ，畢竟Production本來就什麼事情都有可能發生.
+有一個可以支持各種狀況的Service是還滿重要的.另外講者順便Demo了MicroService的部分也是很受用.
+
+從限制理論看Devops也是非常有趣的題目，如同上面所說，推動Devops或者Agile之類的 ， 最容易遇到的是
+文化的衝擊跟工具的選擇 。 工具的選擇好解決 ， 但文化的衝擊...人跟人之間的問題往往是最難處理的。
+
+ELK平台的部分就已經聽過滿多次了 ，只是想說加減聽聽別人怎用的  ， 另外聽到搭配RabbitMQ也是不錯的Idea.
+
+Agile的推動直接舉實例說明也是滿不錯的 ， 但這也是有文化的衝擊問題.
+
+Monitoring的部分也滿重要的 , 其實在玩過container之後 , 還滿明顯的可以提會到.
+Monitor不太可能再依賴單一語言提供的解決方案 , 會需要可以吃進支援各種Ap Server來源 ,
+並且還要夠彈性的方案. 不過我之前評估到後來是先用icinga2就是了 , 因為比較簡單也好架.
+
+https://www.icinga.org/products/icinga-2/
+
+Debug by counter 也是滿有趣的.
+講者提到其實國外滿多Production Code裡面也埋滿多Debug Code 來handle各種錯誤.
+Production的好壞跟Code Robust有關係.如果Production可以應付各種Exception的話,
+使用者的體驗會比較好.所以如果在effort不大的情況增加Code Robust是滿重要的議題.
 
 ----
+
+以下為筆記
 
 Kubernetes
 
