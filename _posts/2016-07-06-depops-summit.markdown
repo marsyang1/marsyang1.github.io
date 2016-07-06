@@ -7,6 +7,7 @@ tags: [summit]
 ---
 
 心得:
+
 有時候看著台人的人開心的演講 ， 真的是滿羨慕的 。 畢竟台中有這樣的環境跟能接受這樣文化的機會實在很少。
 要推動一些內部優化的工作也是困難重重....
 
@@ -31,6 +32,16 @@ Debug by counter 也是滿有趣的.
 講者提到其實國外滿多Production Code裡面也埋滿多Debug Code 來handle各種錯誤.
 Production的好壞跟Code Robust有關係.如果Production可以應付各種Exception的話,
 使用者的體驗會比較好.所以如果在effort不大的情況增加Code Robust是滿重要的議題.
+
+----
+TODO
+
+* Kubernetes的練習
+* 限制理論的研究
+* ELK平台的研究
+* counter pattern , java metrics framework
+* DevOpts開發練的改良
+* spring-boot MicroService 測試
 
 ----
 
