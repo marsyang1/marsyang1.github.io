@@ -35,7 +35,7 @@ print("String concat int => \(testInt) , test")
 ~~~
 swift目前比較特別的地方
 * 一般變數用 var 宣告 , 但如果是都沒改過的值,IDE會提示你改成let 宣告成constant.
-* print 字串 concat的方式用 \()處理
+* print 字串 concat的方式用\\()處理
 * 變數後面加!做unwapper
 * 陣列可以直接宣告成 map結構...但其實我覺得這比較接近python的Dictionary結構
 * 大體上寫起來滿簡單跟Java簡化 or Python頗像,但命名規則跟Java比較像
