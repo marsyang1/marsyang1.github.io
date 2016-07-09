@@ -33,7 +33,9 @@ let testInt = 1
 print("String concat int => \(testInt) , test")
 
 ~~~
+
 swift目前比較特別的地方
+
 * 一般變數用 var 宣告 , 但如果是都沒改過的值,IDE會提示你改成let 宣告成constant.
 * print 字串 concat的方式用\\()處理
 * 變數後面加!做unwapper
@@ -43,4 +45,5 @@ swift目前比較特別的地方
 ----
 
 參考文件
+
 * [learnswift.tips](http://www.learnswift.tips)
