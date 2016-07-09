@@ -26,7 +26,7 @@ Monitoring的部分也滿重要的 , 其實在玩過container之後 , 還滿明�
 Monitor不太可能再依賴單一語言提供的解決方案 , 會需要可以吃進支援各種Ap Server來源 ,
 並且還要夠彈性的方案. 不過我之前評估到後來是先用icinga2就是了 , 因為比較簡單也好架.
 
-https://www.icinga.org/products/icinga-2/
+[https://www.icinga.org/p](https://www.icinga.org/products/icinga-2/)
 
 Debug by counter 也是滿有趣的.
 講者提到其實國外滿多Production Code裡面也埋滿多Debug Code 來handle各種錯誤.
@@ -95,7 +95,7 @@ Docker file vs CM
 	* Easy to use , hard to maintain , extend
 * Packer
 	* tool for createing image
-	* https://www.packer.io
+	* [packer網站](https://www.packer.io)
 * Kubernetes 難設定 , 可用GCP比較快
 * AWS 可新增Tag KubernetesCluster
 * Jenkins Job DSL -> Seed DSL設定  => Jenkins Job
