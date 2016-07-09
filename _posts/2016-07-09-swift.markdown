@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "swift初體驗"
+date:   2016-07-09 12:20:00 +0800
+categories: ios
+tags: [ios,swift]
+---
+
+拜工作環境之賜 , 最近對Java的熱情有點被澆熄了.所以最近都在Try其他語言 , 包含了Python , Swift, Php...
+看看別的語言寫法 , 也許會有新的學習心得.
+
+Swift的魅力就是可以寫IOS App ,比起Web來說 , 畢竟寫App比較能一個人處理全部.省得的麻煩,也比較有趣.
+先前寫過Android 1.6的年代 , 實在不太習慣UI要用XML去刻 , 加上那時候都在摸Java Web就沒繼續深入了.
+現在來學學也是不錯.
+
+簡單的一個Playground做語言練習
+
+~~~ swift
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+let str = "Hello, playground"
+
+print("test pring "+str)
+
+let colorArray = ["red","Blue","Green"]
+let colorDir = ["primaryColor":colorArray[2],"SecondaryColor":colorArray[1]]
+
+print("colorArray[2] = " + colorArray[2])
+print("colorDir primaryColor = " + colorDir["primaryColor"]!)
+let testInt = 1
+print("String concat int => \(testInt) , test")
+
+~~~
+swift目前比較特別的地方
+* 一般變數用 var 宣告 , 但如果是都沒改過的值,IDE會提示你改成let 宣告成constant.
+* print 字串 concat的方式用 \()處理
+* 變數後面加!做unwapper
+* 陣列可以直接宣告成 map結構...但其實我覺得這比較接近python的Dictionary結構
+* 大體上寫起來滿簡單跟Java簡化 or Python頗像
