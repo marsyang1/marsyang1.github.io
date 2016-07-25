@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "swift初體驗"
+date:   2016-07-09 12:20:00 +0800
+categories: ios
+tags: [php,discuz]
+------------------
+
+
+
+----
+
+* 概觀
+    * 網站的大約結構
+    * 
+    * 網路Server組成
+    * 
+    * 網站的組成跟積木一樣 , 是一層一層組合起來的 , 每一層各負責一部分的工作
+        * Apache : 負責靜態網頁的運作程式(html , css) , apache就是跑網站的程式 , 讓html可以透過 ip + 瀏覽器 的方式讓別台電腦讀到網頁.
+        * apache-php外掛 : 讓apache可以跑 php語言
+        * discuz論壇 : 本身是用 html(及各種前端) + php 組成
+        * 資料庫 : 存放資料的地方 , 網站Server本身通常不會存東西 , 除了大檔案例外 , 一般所有的資料例如會員資料 , 論壇貼文 ... 全都是會放到資料庫 , 通常php 的資料庫都是搭配 MySQL.
+    * 免費空間通常都會提供MySQL , Apache 及apache-php  , 所以環境就不用自己安裝太多東西.
+    * 自家的環境就需要一個一個裝起來.
+    * Domain Name Server : 負責網址的解析 , 有很多間. 網站的名字都是跟Domain Name廠商買 , 然後再設定IP
+
+
+* 網路空間步驟
+    * 找空間
+        * 免費空間
+            * https://byet.host/free-hosting
+            * 000webhost
+            * 網路上找找 ，每家狀況不太一樣
+            * http://www.prchecker.info/web-hosting/top-10-free-web-hosting-sites/
+        * 付費空間
+            * http://ihost.net (http://ihost.net/)
+            * https://wanteasy.tw/install-discuz.html
+            * 付費空間通常有一鍵安裝 ....不用自己慢慢裝
+    * 設定資料庫
+    * 上傳discuz到網路目錄
+        * 通常用FTP
+        * http://www.infoskep.com/subject-如何使用filezilla.html (http://www.infoskep.com/subject-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8filezilla.html)
+    * 連到首頁做設定
+    * 完成：http://marstest.byethost7.com (http://marstest.byethost7.com/forum.php)
+        * 帳號：marsyang1000
+        * 密碼：Ey9CMDA90M
+* 自家環境
+    * 建環境
+        * web server
+            * apache
+            * php
+            * http://mark528.pixnet.net/blog/post/7267604-在windows安裝php開發環境 (http://mark528.pixnet.net/blog/post/7267604-%E5%9C%A8windows%E5%AE%89%E8%A3%9Dphp%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83)
+        * 資料庫
+            * MySQL
+            * https://www.youtube.com/watch?v=Un6Qbf1zrBg
+    * 把discuz丟到目錄
+    * 連到首頁做設定
+    * 通常應該是公司的Server ....
+        * 理論上應該是MIS來架才對
+        * 最差的狀況
+            * 只給一個windows server登入 , 其他自己搞定
+* 參考文件
+    * https://www.orztw.com/2014/02/discuz-install.html
+
+----
+
+參考文件
+
+* [learnswift.tips](http://www.learnswift.tips)
+* [ibaction-and-iboutlet](https://thatthinginswift.com/ibaction-and-iboutlet/)

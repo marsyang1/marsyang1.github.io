@@ -47,3 +47,4 @@ swift目前比較特別的地方
 參考文件
 
 * [learnswift.tips](http://www.learnswift.tips)
+* [ibaction-and-iboutlet](https://thatthinginswift.com/ibaction-and-iboutlet/)
