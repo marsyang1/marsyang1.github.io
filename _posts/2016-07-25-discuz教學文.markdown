@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "swift初體驗"
-date:   2016-07-09 12:20:00 +0800
-categories: ios
+title:  "discuz教學文"
+date:   2016-07-25 22:20:00 +0800
+categories: php
 tags: [php,discuz]
-------------------
+----
 
 兩位前同事最近突然找我聊轉換跑道的事 , 其中一位想請我教如何架discuz論壇 , so就寫了一下 , 順便貼這邊.
 
@@ -108,7 +108,7 @@ tags: [php,discuz]
               ~~~
                  extension_dir = "./ext/"
               ~~~
- 
+
           * 尋找
 
               ~~~
@@ -118,10 +118,10 @@ tags: [php,discuz]
                   ;extension=php_mysqli.dll
                   ;extension=php_pdo_mysql.dll
                   ;extension=php_pdo_sqlite.dll
-    
+
                   ;extension=php_sqlite3.dll
               ~~~
-              
+
 
           * 取消註解 ;
 
@@ -132,7 +132,7 @@ tags: [php,discuz]
                   extension=php_mysqli.dll
                   extension=php_pdo_mysql.dll
                   extension=php_pdo_sqlite.dll
-    
+
                   extension=php_sqlite3.dll
               ~~~
 
