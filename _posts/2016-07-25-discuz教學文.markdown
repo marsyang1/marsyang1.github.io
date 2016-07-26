@@ -4,7 +4,7 @@ title:  "discuz教學文"
 date:   2016-07-25 22:20:00 +0800
 categories: php
 tags: [php,discuz]
-----
+---
 
 兩位前同事最近突然找我聊轉換跑道的事 , 其中一位想請我教如何架discuz論壇 , so就寫了一下 , 順便貼這邊.
 
