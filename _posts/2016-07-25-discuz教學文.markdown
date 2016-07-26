@@ -147,15 +147,15 @@ tags: [php,discuz]
         ```
 
       * 到瀏覽器輸入 http://localhost/info.php , 測試看是否能看到php的畫面
-* 資料庫
-  * 下載資料庫
-      * https://dev.mysql.com/downloads/mysql/
-  * 安裝
-  * 打開MySQL WorkBench 連線到資料庫
-* 把discuz解壓縮 到C:/discuz
-* 把C:/discuz/uploads 底下所有檔案 , 複製到 C:/nginx/html 底下
-* 刪除 C:/nginx/html 底下的 index.html
-* 打開瀏覽器 , 輸入 http://localhost/index.php 做設定
+    * 資料庫
+      * 下載資料庫
+          * https://dev.mysql.com/downloads/mysql/
+      * 安裝
+      * 打開MySQL WorkBench 連線到資料庫
+    * 把discuz解壓縮 到C:/discuz
+    * 把C:/discuz/uploads 底下所有檔案 , 複製到 C:/nginx/html 底下
+    * 刪除 C:/nginx/html 底下的 index.html
+    * 打開瀏覽器 , 輸入 http://localhost/index.php 做設定
 * 通常應該是公司的Server ....
 * 理論上應該是MIS來架才對
 * 最差的狀況
