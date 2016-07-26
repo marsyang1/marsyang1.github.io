@@ -6,15 +6,17 @@ categories: ios
 tags: [php,discuz]
 ------------------
 
+兩位前同事最近突然找我聊轉換跑道的事 , 其中一位想請我教如何架discuz論壇 , so就寫了一下 , 順便貼這邊.
 
+這邊設定是給完全沒有基礎的人 , 有IT基礎的 , 建議是用docker架一架(https://hub.docker.com/r/skyzhou/docker-discuz/)比較快.
 
 ----
 
 * 概觀
     * 網站的大約結構
-    * 
+    *
     * 網路Server組成
-    * 
+    *
     * 網站的組成跟積木一樣 , 是一層一層組合起來的 , 每一層各負責一部分的工作
         * Apache : 負責靜態網頁的運作程式(html , css) , apache就是跑網站的程式 , 讓html可以透過 ip + 瀏覽器 的方式讓別台電腦讀到網頁.
         * apache-php外掛 : 讓apache可以跑 php語言
@@ -47,20 +49,116 @@ tags: [php,discuz]
 * 自家環境
     * 建環境
         * web server
-            * apache
+            * windows or linux
+            * nginx or apache
             * php
-            * http://mark528.pixnet.net/blog/post/7267604-在windows安裝php開發環境 (http://mark528.pixnet.net/blog/post/7267604-%E5%9C%A8windows%E5%AE%89%E8%A3%9Dphp%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83)
         * 資料庫
             * MySQL
             * https://www.youtube.com/watch?v=Un6Qbf1zrBg
-    * 把discuz丟到目錄
-    * 連到首頁做設定
-    * 通常應該是公司的Server ....
-        * 理論上應該是MIS來架才對
-        * 最差的狀況
-            * 只給一個windows server登入 , 其他自己搞定
+        * 步驟
+            * 參考資料
+              * 自己打造免安裝版的WNMP - Nginx+PHP5+MariaDB(http://takiocc.blogspot.tw/2015/09/windows-portablewnmp-nginxphp5mariadb.html)
+              *  web server
+      *  下載nginx(http://nginx.org/en/download.html)
+      *  解壓縮zip檔 , 丟到 C:/nginx
+      *  修改C:/nginx/conf/nginx.conf
+          * 尋找
+
+            ```
+
+               location / {
+                              root   html;
+                              index  index.html index.htm;
+                          }
+            ```
+
+          * 取代
+
+            ```
+              location / {
+                              root   html;
+                              index  index.php index.html index.htm;
+                  }
+
+                  location ~ .*\.php(\/.*)*$ {
+                     root html;
+                     fastcgi_pass   127.0.0.1:9000;
+                     fastcgi_index  index.php;
+                     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                     include fastcgi_params;
+                  }
+            ```
+      *  點兩下 C:/nginx/nginx.exe
+      *  用瀏覽器輸入 http://localhost(http://localhost) 確認畫面應該要出來
+  *  安裝php
+      *  php 目前有分 5.x 及 7.x , discuz本身對 7.x還不支援 , 所以要裝 php 5.x
+      *  下載安裝 Visual C++ Redistributable for Visual Studio 2012 x64 (https://www.microsoft.com/en-us/download/details.aspx?id=30679)
+      *  到http://windows.php.net/downloads/releases/archives/(http://windows.php.net/downloads/releases/archives/)找Php (http://windows.php.net/downloads/releases/archives/(http://windows.php.net/downloads/releases/archives/)%E6%89%BEPhp) 5.x的最新版 , 例如 php-5.6.9-Win32-VC11-x64.zip
+      * 解壓縮到 C:/php
+      * 複製C:\php\php.ini-development 為 php.ini
+      * 修改C:/php/php.ini
+          * 尋找
+
+          ```
+              ;extension_dir = "ext"
+          ```
+
+          * 取代
+
+          ```
+              extension_dir = "./ext/"
+          ```
+
+          * 尋找
+          
+          ```
+              ;extension=php_gd2.dll
+              ;extension=php_mbstring.dll
+              ;extension=php_mysql.dll
+              ;extension=php_mysqli.dll
+              ;extension=php_pdo_mysql.dll
+              ;extension=php_pdo_sqlite.dll
+
+              ;extension=php_sqlite3.dll
+          ```
+
+          * 取消註解 ;
+
+          ```
+              extension=php_gd2.dll
+              extension=php_mbstring.dll
+              extension=php_mysql.dll
+              extension=php_mysqli.dll
+              extension=php_pdo_mysql.dll
+              extension=php_pdo_sqlite.dll
+
+              extension=php_sqlite3.dll
+          ```
+
+  * 到命令提示字元輸入下面內容啟動 php - fastCGI
+      ```
+      c:\php\php-cgi.exe -b 127.0.0.1:9000 -c "c:\php\php.ini"
+      ```
+  * 測試nginx + php
+      * 到 C:/nginx/html 底下新增一個 info.php  , 內容為
+          * <?php phpinfo(); ?>
+      * 到瀏覽器輸入 http://localhost/info.php , 測試看是否能看到php的畫面
+* 資料庫
+  * 下載資料庫
+      * https://dev.mysql.com/downloads/mysql/
+  * 安裝
+  * 打開MySQL WorkBench 連線到資料庫
+* 把discuz解壓縮 到C:/discuz
+* 把C:/discuz/uploads 底下所有檔案 , 複製到 C:/nginx/html 底下
+* 刪除 C:/nginx/html 底下的 index.html
+* 打開瀏覽器 , 輸入 http://localhost/index.php 做設定
+* 通常應該是公司的Server ....
+* 理論上應該是MIS來架才對
+* 最差的狀況
+  * 只給一個windows server登入 , 其他自己搞定
 * 參考文件
     * https://www.orztw.com/2014/02/discuz-install.html
+    * http://mark528.pixnet.net/blog/post/7267604-在windows安裝php開發環境 (http://mark528.pixnet.net/blog/post/7267604-%E5%9C%A8windows%E5%AE%89%E8%A3%9Dphp%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83)
 
 ----
 
