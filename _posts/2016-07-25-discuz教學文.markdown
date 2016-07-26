@@ -97,15 +97,20 @@ tags: [php,discuz]
       * 解壓縮到 C:/php
       * 複製C:\php\php.ini-development 為 php.ini
       * 修改C:/php/php.ini
-          * 尋找          
+          * 尋找
+                    
             ```
               ;extension_dir = "ext"
             ```
-          * 取代          
+            
+          * 取代
+                    
             ```
               extension_dir = "./ext/"
             ```
-          * 尋找          
+            
+          * 尋找 
+                   
             ```
               ;extension=php_gd2.dll
               ;extension=php_mbstring.dll
@@ -115,7 +120,9 @@ tags: [php,discuz]
               ;extension=php_pdo_sqlite.dll
               ;extension=php_sqlite3.dll
             ```
+            
           * 取消註解 ;
+          
             ```
                 extension=php_gd2.dll
                 extension=php_mbstring.dll
@@ -125,10 +132,13 @@ tags: [php,discuz]
                 extension=php_pdo_sqlite.dll
                 extension=php_sqlite3.dll
             ```
+            
   * 到命令提示字元輸入下面內容啟動 php - fastCGI
+  
       ```
         c:\php\php-cgi.exe -b 127.0.0.1:9000 -c "c:\php\php.ini"
       ```
+      
   * 測試nginx + php
       * 到 C:/nginx/html 底下新增一個 info.php  , 內容為
 
