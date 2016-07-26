@@ -97,55 +97,44 @@ tags: [php,discuz]
       * 解壓縮到 C:/php
       * 複製C:\php\php.ini-development 為 php.ini
       * 修改C:/php/php.ini
-          * 尋找
-
-              ~~~
-                 ;extension_dir = "ext"
-              ~~~
-
-          * 取代
-
-              ~~~
-                 extension_dir = "./ext/"
-              ~~~
-
-          * 尋找
-
-              ~~~
-                  ;extension=php_gd2.dll
-                  ;extension=php_mbstring.dll
-                  ;extension=php_mysql.dll
-                  ;extension=php_mysqli.dll
-                  ;extension=php_pdo_mysql.dll
-                  ;extension=php_pdo_sqlite.dll
-
-                  ;extension=php_sqlite3.dll
-              ~~~
-
-
+          * 尋找          
+            ```
+              ;extension_dir = "ext"
+            ```
+          * 取代          
+            ```
+              extension_dir = "./ext/"
+            ```
+          * 尋找          
+            ```
+              ;extension=php_gd2.dll
+              ;extension=php_mbstring.dll
+              ;extension=php_mysql.dll
+              ;extension=php_mysqli.dll
+              ;extension=php_pdo_mysql.dll
+              ;extension=php_pdo_sqlite.dll
+              ;extension=php_sqlite3.dll
+            ```
           * 取消註解 ;
-
-              ~~~
-                  extension=php_gd2.dll
-                  extension=php_mbstring.dll
-                  extension=php_mysql.dll
-                  extension=php_mysqli.dll
-                  extension=php_pdo_mysql.dll
-                  extension=php_pdo_sqlite.dll
-
-                  extension=php_sqlite3.dll
-              ~~~
-
+            ```
+                extension=php_gd2.dll
+                extension=php_mbstring.dll
+                extension=php_mysql.dll
+                extension=php_mysqli.dll
+                extension=php_pdo_mysql.dll
+                extension=php_pdo_sqlite.dll
+                extension=php_sqlite3.dll
+            ```
   * 到命令提示字元輸入下面內容啟動 php - fastCGI
-      ~~~
+      ```
         c:\php\php-cgi.exe -b 127.0.0.1:9000 -c "c:\php\php.ini"
-      ~~~
+      ```
   * 測試nginx + php
       * 到 C:/nginx/html 底下新增一個 info.php  , 內容為
 
-        ~~~php
+        ```php
           <?php phpinfo(); ?>
-        ~~~
+        ```
 
       * 到瀏覽器輸入 http://localhost/info.php , 測試看是否能看到php的畫面
 * 資料庫
@@ -166,8 +155,3 @@ tags: [php,discuz]
     * http://mark528.pixnet.net/blog/post/7267604-在windows安裝php開發環境 (http://mark528.pixnet.net/blog/post/7267604-%E5%9C%A8windows%E5%AE%89%E8%A3%9Dphp%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83)
 
 ----
-
-參考文件
-
-* [learnswift.tips](http://www.learnswift.tips)
-* [ibaction-and-iboutlet](https://thatthinginswift.com/ibaction-and-iboutlet/)
