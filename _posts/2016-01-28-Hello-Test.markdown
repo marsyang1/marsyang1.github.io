@@ -3,6 +3,7 @@ layout: post
 title:  "Hello Jekyll!"
 date:   2016-01-28 11:37:00 +0800
 categories: jekyll update
+comments: true
 tags: [github, github-pages, jekyll]
 ---
 想架一個寫技術Note的文件很久了 , 但一直沒找的一個容易維護+免費+有code format的地方.
